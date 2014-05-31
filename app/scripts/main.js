@@ -54,15 +54,10 @@ $(document).ready(function() {
     console.log('Adding user to database.... ');
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:5000/users/',
+      url: 'http://api.ethicalswitch.org/users/',
       data: response,
       dataType: 'json',
-      contentType: 'application/x-www-form-urlencoded',
-      // success: callback,
-      // beforeSend : function(xhr) {
-      //     xhr.setRequestHeader("Authorization", 
-      //         "Basic blah");
-      // }
+      contentType: 'application/x-www-form-urlencoded'
     });
   }
 
