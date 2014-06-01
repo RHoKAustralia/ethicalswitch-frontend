@@ -55,7 +55,11 @@ $(document).ready(function() {
     if (firstName && lastName && email) {
       $('#sign-up-error').hide();
       addUser({first_name: firstName, last_name: lastName, email: email});
+      $('#display-first-name').text(firstName);
       $('#sign-up-success').show();
+      $('#first-name').val('');
+      $('#last-name').val('');
+      $('#email').val('');
     }
     else {
       $('#sign-up-error').show();
