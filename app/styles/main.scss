@@ -16,6 +16,16 @@ $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-
         &#motivation {}
         &#what-we-do {}
         &#tribe {}
-        &#join {}
+        &#join {
+          background-image: url("../images/crowd.png");
+          background-size: cover;
+        }
     }
+}
+
+.breakout {
+  width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
 }
