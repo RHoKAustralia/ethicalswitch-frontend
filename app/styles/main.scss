@@ -13,8 +13,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
         &#what-we-do {}
         &#tribe {}
         &#join {
-          background-image: url("../images/crowd.png");
-          background-size: cover;
+          background: url(/images/crowd.png) repeat-x center center fixed; 
         }
     }
 }
