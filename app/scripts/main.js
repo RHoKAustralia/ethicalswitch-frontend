@@ -3,7 +3,7 @@ $(document).ready(function() {
   $.getScript('//connect.facebook.net/en_UK/all.js', function(){
     FB.init({
       appId: '1427999834129994',
-    });     
+    });
     $('#loginbutton,#feedbutton').removeAttr('disabled');
     FB.getLoginStatus(updateStatusCallback);
   });
@@ -60,5 +60,19 @@ $(document).ready(function() {
       contentType: 'application/x-www-form-urlencoded'
     });
   }
+
+    $("#main").onepage_scroll({
+       sectionContainer: "section",
+       easing: "ease",
+
+       animationTime: 1000,
+       pagination: true,
+       updateURL: false,
+       beforeMove: function(index) {},
+       afterMove: function(index) {},
+       loop: false,
+       keyboard: true,
+       responsiveFallback: false
+    });
 
 });

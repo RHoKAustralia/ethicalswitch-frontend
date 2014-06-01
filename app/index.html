@@ -9,6 +9,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="../bower_components/fullPage.js/jquery.fullPage.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -20,47 +21,54 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <h3 class="text-muted">Ethical Switch</h3>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Ethical Switch</a>
             </div>
 
-            <div class="jumbotron">
-                <p class="lead">Imagine a world where your everyday purchases contribute to the good in the world.</p>
-                <p><a id="login" class="btn btn-lg btn-primary" href="#">Sign up with Facebook <span class="glyphicon glyphicon-user"></span></a></p>
-                <p id="status"></p>
+            <div class="collapse navbar-collapse">
+              <ul id="navigation" class="nav navbar-nav navbar-right">
+                <li data-menu-anchor="inspiration"><a href="#inspiration">Inspiration</a></li>
+                <li data-menu-anchor="motivation"><a href="#motivation">Motivation</a></li>
+                <li data-menu-anchor="what-we-do"><a href="#what-we-do">What We Do</a></li>
+                <li data-menu-anchor="tribe"><a href="#tribe">Tribe</a></li>
+                <li data-menu-anchor="join"><a href="#join">Switch Now</a></li>
+              </ul>
             </div>
+          </div>
+        </nav>
 
-            <div class="row marketing">
-                <div class="col-lg-6">
-                    <h4>Join the Tribe</h4>
-                    <p> Calling 25,000 people to sign up to sign up to a socially conscious electricity deal</p>
-                    <h4>Make others Responsible</h4>
-                    <p>We believe that responsible consumerism is achieved through collective power.</p>
-                </div>
-                <div class="col-lg-6">
-                    <h4>What we're doing</h4>
-                    <p>Join a movement of consumers who give back through their everyday purchases.</p>
-                    <h4>Grow the Tribe</h4>
-                    <p>Register to hear more about the deal as we progress negotiations.</p>
-                </div>
-            </div>
-
-            <div class="footer">
-                <p><span class="glyphicon glyphicon-heart"></span> Ethical Switch</p>
-            </div>
-
+        <div id="main">
+            <section id="inspiration" class="section">
+                Inspiration
+            </section>
+            <section id="motivation" class="section">
+                Motivation
+            </section>
+            <section id="what-we-do" class="section">
+                What We Do
+            </section>
+            <section id="tribe" class="section">
+                Tribe
+            </section>
+            <section id="join" class="section">
+                Join
+            </section>
         </div>
 
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/jQuery/dist/jquery.js"></script>
+        <script src="../bower_components/onepage-scroll/jquery.onepage-scroll.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
