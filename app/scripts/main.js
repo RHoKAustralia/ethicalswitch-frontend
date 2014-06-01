@@ -4,6 +4,7 @@ $(document).ready(function() {
     FB.init({
       appId: '1427999834129994',
     });
+    $('#loginbutton,#feedbutton').removeAttr('disabled');
     FB.getLoginStatus(updateStatusCallback);
   });
 
@@ -90,6 +91,19 @@ $(document).ready(function() {
       $('#user-count span').text(data);
     });
   }
+
+  $("#main").onepage_scroll({
+      sectionContainer: "section",
+      easing: "ease",
+      animationTime: 1000,
+      pagination: true,
+      updateURL: false,
+      beforeMove: function(index) {},
+      afterMove: function(index) {},
+      loop: false,
+      keyboard: true,
+      responsiveFallback: false
+  });
 
   function getUserCount() {
     $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
