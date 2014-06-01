@@ -63,6 +63,7 @@ $(document).ready(function() {
       $('#email').val('');
     }
     else {
+      $('#sign-up-success').hide();
       $('#sign-up-error').show();
     }
   });
