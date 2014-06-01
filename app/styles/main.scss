@@ -9,10 +9,11 @@ $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-
 @import "components/fonts";
 
 @import "inspiration";
+@import "motivation";
 
 #main {
     section {
-        padding-top: $navbar-height;
+        /*padding-top: $navbar-height;*/
         &#inspiration {}
         &#motivation {
         }
