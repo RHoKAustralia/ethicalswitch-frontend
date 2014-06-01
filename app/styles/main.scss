@@ -8,6 +8,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 #main {
     section {
+        padding-top: $navbar-height;
         &#inspiration {}
         &#motivation {}
         &#what-we-do {}
