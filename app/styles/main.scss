@@ -6,6 +6,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import "components/onepage-scroll";
 
+@import "inspiration";
+
 #main {
     section {
         &#inspiration {}
@@ -17,7 +19,6 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
         }
     }
 }
-
 .breakout {
   width: 900px;
   margin: 0 auto;

@@ -1,0 +1,22 @@
+#inspiration {
+  background-image: url(/images/crowd.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .breakout {
+    .logo {
+      display: block;
+      height: 300px;
+      margin: auto auto;
+    }
+    .message {
+      text-align: center;
+      font-size: 40px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    background-color:rgba(255, 255, 255, 0.5);
+    color: black;
+  }
+
+}
