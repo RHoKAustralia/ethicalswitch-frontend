@@ -20,7 +20,8 @@ $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-
         &#what-we-do {}
         &#tribe {}
         &#join {
-          background: url(/images/crowd.png) repeat-x center center fixed;
+          background-image: url(/images/crowd.png);
+
           .jumbotron {
             padding-top: 28px;
             padding-bottom: 28px;
