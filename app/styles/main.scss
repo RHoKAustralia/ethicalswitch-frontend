@@ -61,6 +61,11 @@ $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-
             display: inline;
           }
         }
+        &#about {
+            .breakout {
+                text-align: left;
+            }
+        }
     }
 }
 .breakout {
