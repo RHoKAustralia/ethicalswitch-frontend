@@ -12,6 +12,16 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
         &#motivation {}
         &#what-we-do {}
         &#tribe {}
-        &#join {}
+        &#join {
+          background-image: url("../images/crowd.png");
+          background-size: cover;
+        }
     }
+}
+
+.breakout {
+  width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
 }
