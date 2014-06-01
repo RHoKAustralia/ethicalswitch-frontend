@@ -52,6 +52,7 @@ $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-
           .jumbotron {
             padding-top: 28px;
             padding-bottom: 28px;
+            background-color: rgba(244,244,244,1);
           }
           h2 {
             color: #2ca4e5;
@@ -65,11 +66,28 @@ $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-
             .breakout {
                 text-align: left;
             }
+            .jumbotron {
+                background-color: rgba(244,244,244,1);
+            }
+
+            ul li {
+                font-size: 18px;
+            }
         }
     }
 }
+
+.jumbotron {
+    background-color: rgba(255,255,255,0.75);
+}
+
+section {
+    .container {
+        height: 100%;
+    }
+}
+
 .breakout {
-  width: 900px;
   margin: 0 auto;
   text-align: center;
   margin-top: 100px;
