@@ -93,12 +93,18 @@ $(document).ready(function() {
     });
   }
 
+  function getUserCount() {
+    $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
+      $('#user-count span').animateNumber({ number: data });
+    });
+  }
+
   $("#main").onepage_scroll({
       sectionContainer: "section",
       easing: "ease",
       animationTime: 1000,
       pagination: true,
-      updateURL: false,
+      updateURL: true,
       beforeMove: function(index) {},
       afterMove: function(index) {},
       loop: false,
@@ -106,14 +112,9 @@ $(document).ready(function() {
       responsiveFallback: false
   });
 
-  function getUserCount() {
-    $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
-      $('#user-count span').animateNumber({ number: data });
-    });
-  }
-
   $(document).ready(function() {
     getUserCount();
+    $("#main").moveTo(1);
   });
 
 });
