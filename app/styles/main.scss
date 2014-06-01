@@ -8,6 +8,8 @@ $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-
 @import "components/onepage-scroll";
 @import "components/fonts";
 
+@import "inspiration";
+
 #main {
     section {
         padding-top: $navbar-height;
@@ -18,12 +20,10 @@ $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-
         &#what-we-do {}
         &#tribe {}
         &#join {
-          background-image: url("../images/crowd.png");
-          background-size: cover;
+          background: url(/images/crowd.png) repeat-x center center fixed; 
         }
     }
 }
-
 .breakout {
   width: 900px;
   margin: 0 auto;
