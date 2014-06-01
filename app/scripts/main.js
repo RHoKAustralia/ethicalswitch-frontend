@@ -3,7 +3,7 @@ $(document).ready(function() {
   $.getScript('//connect.facebook.net/en_UK/all.js', function(){
     FB.init({
       appId: '1427999834129994',
-    });     
+    });
     FB.getLoginStatus(updateStatusCallback);
   });
 
@@ -46,6 +46,20 @@ $(document).ready(function() {
     FB.logout(function(response) {
       updateStatusCallback(response);
     });
+  });
+
+  $("#sign-up-button").click(function() {
+    firstName =  $('#first-name').val();
+    lastName = $('#last-name').val();
+    email = $('#email').val();
+    if (firstName && lastName && email) {
+      $('#sign-up-error').hide();
+      addUser({first_name: firstName, last_name: lastName, email: email});
+      $('#sign-up-success').show();
+    }
+    else {
+      $('#sign-up-error').show();
+    }
   });
 
   function addUser(response) {
