@@ -13,7 +13,18 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
         &#what-we-do {}
         &#tribe {}
         &#join {
-          background: url(/images/crowd.png) repeat-x center center fixed; 
+          background: url(/images/crowd.png) repeat-x center center fixed;
+          .jumbotron {
+            padding-top: 28px;
+            padding-bottom: 28px;
+          }
+          h2 {
+            color: #2ca4e5;
+          }
+          .form-control {
+            width: 160px;
+            display: inline;
+          }
         }
     }
 }
