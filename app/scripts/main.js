@@ -81,13 +81,18 @@ $(document).ready(function() {
       data: response,
       dataType: 'json',
       contentType: 'application/x-www-form-urlencoded',
-      success: getUserCount
+      success: updateUserCount
+    });
+  }
+
+  function updateUserCount() {
+    $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
+      $('#user-count span').text(data);
     });
   }
 
   function getUserCount() {
     $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
-      console.log(data);
       $('#user-count span').animateNumber({ number: data });
     });
   }
