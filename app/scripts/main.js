@@ -62,6 +62,14 @@ $(document).ready(function() {
     }
   });
 
+  function getUserCount() {
+    $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
+      console.log(data);
+      $( "#user-count span" ).html(data);
+    });
+  }
+
+
   function addUser(response) {
     console.log('Adding user to database.... ');
     $.ajax({
@@ -69,14 +77,9 @@ $(document).ready(function() {
       url: 'http://api.ethicalswitch.org/users/',
       data: response,
       dataType: 'json',
-      contentType: 'application/x-www-form-urlencoded'
-    });
-  }
+      contentType: 'application/x-www-form-urlencoded',
+      success: getUserCount
 
-  function getUserCount() {
-    $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
-      console.log(data);
-      $( "#user-count span" ).html(data);
     });
   }
 
