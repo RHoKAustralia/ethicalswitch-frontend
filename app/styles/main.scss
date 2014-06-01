@@ -1,15 +1,22 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
 @import "components/onepage-scroll";
+@import "components/fonts";
+
+@import "inspiration";
 
 #main {
     section {
+        padding-top: $navbar-height;
         &#inspiration {}
-        &#motivation {}
+        &#motivation {
+            background-color: rgb(75,95,255);
+        }
         &#what-we-do {}
         &#tribe {}
         &#join {
@@ -28,7 +35,6 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
         }
     }
 }
-
 .breakout {
   width: 900px;
   margin: 0 auto;
