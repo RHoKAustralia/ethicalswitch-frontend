@@ -98,7 +98,7 @@ $(document).ready(function() {
       easing: "ease",
       animationTime: 1000,
       pagination: true,
-      updateURL: false,
+      updateURL: true,
       beforeMove: function(index) {},
       afterMove: function(index) {},
       loop: false,
@@ -115,6 +115,7 @@ $(document).ready(function() {
 
   $(document).ready(function() {
     getUserCount();
+    $("#main").moveTo(1);
   });
 
 });
