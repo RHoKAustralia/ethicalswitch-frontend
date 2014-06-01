@@ -9,44 +9,68 @@ $(document).ready(function() {
   });
 
   function updateStatusCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
     // The response object is returned with a status field that lets the
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      loggedIn();
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', function(response) {
+        addUser(response);
+        console.log('Successful login for: ' + response.name);
+        $('#status').html('Thanks for signing up, ' + response.first_name + '!');
+        $('#login').html('Welcome to the Tribe! <span class="glyphicon glyphicon-ok">').addClass('btn-success');
+      });
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
+      $('#status').html('');
+      $('#login').html('Sign up with Facebook <span class="glyphicon glyphicon-user">').removeClass('btn-success').addClass('btn-primary');
     }
   }
 
   $("#login").click(function() {
      FB.login(function(response) {
-      Log.info('FB.login callback', response);
       if (response.status === 'connected') {
-        Log.info('User is logged in');
         addUser(response);
+        updateStatusCallback(response);
       } else {
         Log.info('User is logged out');
       }
     });
    });
 
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function loggedIn() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-              addUser(response);
-      console.log('Successful login for: ' + response.name);
-      $('#status').html('Thanks for signing up, ' + response.first_name + '!');
-      $('#login').html('Welcome to the Tribe! <span class="glyphicon glyphicon-ok">').addClass('btn-success');
+  $("#logout").click(function() {
+    FB.logout(function(response) {
+      updateStatusCallback(response);
+    });
+  });
+
+  $("#sign-up-button").click(function() {
+    firstName =  $('#first-name').val();
+    lastName = $('#last-name').val();
+    email = $('#email').val();
+    if (firstName && lastName && email) {
+      $('#sign-up-error').hide();
+      addUser({first_name: firstName, last_name: lastName, email: email});
+      $('#display-first-name').text(firstName);
+      $('#sign-up-success').show();
+      $('#first-name').val('');
+      $('#last-name').val('');
+      $('#email').val('');
+    }
+    else {
+      $('#sign-up-error').show();
+    }
+  });
+
+  function getUserCount() {
+    $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
+      console.log(data);
+      $( "#user-count span" ).html(data);
     });
   }
 
@@ -57,22 +81,33 @@ $(document).ready(function() {
       url: 'http://api.ethicalswitch.org/users/',
       data: response,
       dataType: 'json',
-      contentType: 'application/x-www-form-urlencoded'
+      contentType: 'application/x-www-form-urlencoded',
+      success: getUserCount
     });
   }
 
-    $("#main").onepage_scroll({
-       sectionContainer: "section",
-       easing: "ease",
+  $("#main").onepage_scroll({
+      sectionContainer: "section",
+      easing: "ease",
+      animationTime: 1000,
+      pagination: true,
+      updateURL: false,
+      beforeMove: function(index) {},
+      afterMove: function(index) {},
+      loop: false,
+      keyboard: true,
+      responsiveFallback: false
+  });
 
-       animationTime: 1000,
-       pagination: true,
-       updateURL: false,
-       beforeMove: function(index) {},
-       afterMove: function(index) {},
-       loop: false,
-       keyboard: true,
-       responsiveFallback: false
+  function getUserCount() {
+    $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
+      console.log(data);
+      $('#user-count span').animateNumber({ number: data });
     });
+  }
+
+  $(document).ready(function() {
+    getUserCount();
+  });
 
 });
