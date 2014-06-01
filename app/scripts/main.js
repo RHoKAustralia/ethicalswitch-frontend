@@ -3,7 +3,7 @@ $(document).ready(function() {
   $.getScript('//connect.facebook.net/en_UK/all.js', function(){
     FB.init({
       appId: '1427999834129994',
-    });     
+    });
     FB.getLoginStatus(updateStatusCallback);
   });
 
@@ -48,6 +48,27 @@ $(document).ready(function() {
     });
   });
 
+  $("#sign-up-button").click(function() {
+    firstName =  $('#first-name').val();
+    lastName = $('#last-name').val();
+    email = $('#email').val();
+    if (firstName && lastName && email) {
+      $('#sign-up-error').hide();
+      addUser({first_name: firstName, last_name: lastName, email: email});
+      $('#sign-up-success').show();
+    }
+    else {
+      $('#sign-up-error').show();
+    }
+  });
+
+  function getUserCount() {
+    $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
+      console.log(data);
+      $( "#user-count span" ).html(data);
+    });
+  }
+
   function addUser(response) {
     console.log('Adding user to database.... ');
     $.ajax({
@@ -55,7 +76,8 @@ $(document).ready(function() {
       url: 'http://api.ethicalswitch.org/users/',
       data: response,
       dataType: 'json',
-      contentType: 'application/x-www-form-urlencoded'
+      contentType: 'application/x-www-form-urlencoded',
+      success: getUserCount
     });
   }
 
