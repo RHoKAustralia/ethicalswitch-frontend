@@ -109,7 +109,7 @@ $(document).ready(function() {
   function getUserCount() {
     $.get( "http://api.ethicalswitch.org/users/count/", function(data) {
       console.log(data);
-      $('#user-count').animateNumber({ number: data });
+      $('.user-count').animateNumber({ number: data });
     });
   }
 
