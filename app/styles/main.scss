@@ -15,10 +15,35 @@ $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-
         padding-top: $navbar-height;
         &#inspiration {}
         &#motivation {
-            background-color: rgb(75,95,255);
         }
-        &#what-we-do {}
-        &#tribe {}
+        &#what-we-do {
+          text-align: left;
+          padding-top: 200px;
+          h1 {
+            font-weight: 300;
+            font-style: italic;
+            font-size: 3.4em;
+            line-height: 1.4em;
+            em {
+              color: #2ca4e5;
+            }
+          }
+        }
+        &#tribe {
+          background-color: rgb(75,95,255);
+          text-align: center;
+          padding-top: 200px;
+          h1 {
+            font-weight: 300;
+            font-style: italic;
+            font-size: 3.4em;
+            line-height: 1.4em;
+            color: #ffffff;
+            em {
+              color: #2ca4e5;
+            }
+          }
+        }
         &#join {
           background-image: url(/images/crowd.png);
 
