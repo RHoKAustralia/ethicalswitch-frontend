@@ -57,7 +57,7 @@ $(document).ready(function() {
       $('#sign-up-error').hide();
       addUser({first_name: firstName, last_name: lastName, email: email});
       $('#display-first-name').text(firstName);
-      $('#sign-up-success').show();
+      $('#login').html('Welcome to the Tribe! <span class="glyphicon glyphicon-ok">').addClass('btn-success');
       $('#first-name').val('');
       $('#last-name').val('');
       $('#email').val('');
